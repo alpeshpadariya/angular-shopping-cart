@@ -13,7 +13,8 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { PostAddComponent } from './post-add/post-add.component';
 import { reducers, metaReducers } from './app-state';
-import { PostEffect } from './app-state/effects/post.effect';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 @NgModule({
   declarations: [AppComponent, PostAddComponent],
   imports: [
@@ -22,6 +23,7 @@ import { PostEffect } from './app-state/effects/post.effect';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    ModalModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,
     }),

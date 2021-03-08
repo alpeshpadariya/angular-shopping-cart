@@ -4,6 +4,8 @@ import { Store } from '@ngrx/store';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { getPostsSelector } from '../app-state';
 import * as postAction from '../app-state/actions/index.action';
+import { deletePostsSuccess } from '../app-state/actions/post.action';
+import { PostModel } from '../app-state/models/post.model';
 
 @Component({
   selector: 'app-post',
@@ -54,7 +56,6 @@ export class PostComponent implements OnInit {
   }
 
   openModal(ref: TemplateRef<any>, product) {
-    console.log('edit', product);
     this.modalRef = this.modalService.show(ref);
     this.editForm.setValue({
       title: product.title,
@@ -63,7 +64,10 @@ export class PostComponent implements OnInit {
     });
   }
 
-  delProduct(product) {
-    console.log('del', product);
+  delProduct(post: PostModel) {
+    const data = confirm('Are you sure to delete?');
+    if (data === true) {
+      this.store.dispatch(deletePostsSuccess({ post }));
+    }
   }
 }

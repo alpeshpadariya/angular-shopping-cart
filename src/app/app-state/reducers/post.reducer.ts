@@ -1,5 +1,9 @@
 import { createReducer, on, State, Action } from '@ngrx/store';
-import { createTask, getPostsSuccess } from '../actions/post.action';
+import {
+  createTask,
+  deletePostsSuccess,
+  getPostsSuccess,
+} from '../actions/post.action';
 import { PostModel } from '../models/post.model';
 
 export interface PostState {
@@ -33,6 +37,11 @@ const postReducer = createReducer(
     ...state,
     isLoadingSuccess: state.isLoadingSuccess,
     post: action.post,
+  })),
+  on(deletePostsSuccess, (state, action) => ({
+    ...state,
+    isLoadingSuccess: true,
+    post: state.post.filter((x) => x.title !== action.post.title),
   }))
 );
 

@@ -9,6 +9,10 @@ export const GET_TASKS = '[GET] POSTS';
 export const GET_TASKS_SUCCESS = '[GET] POSTS SUCCESS';
 export const GET_TASKS_FAILED = '[GET] POSTS FAILED';
 
+export const DELETE_POST = '[DELETE] POSTS';
+export const DELETE_POST_SUCCESS = '[DELETE] POSTS SUCCESS';
+export const DELETE_POST_FAILED = '[DELETE] POSTS FAILED';
+
 export const createTask = createAction(CREATE_TASK, props<{ post: any }>());
 export const createTaskSuccess = createAction(
   CREATE_TASK,
@@ -25,3 +29,13 @@ export const getPostsSuccess = createAction(
   props<{ post: PostModel[] }>()
 );
 export const getPostsFailed = createAction(GET_TASKS_FAILED, props<{ any }>());
+
+export const deletePosts = createAction(DELETE_POST);
+export const deletePostsSuccess = createAction(
+  DELETE_POST_SUCCESS,
+  props<{ post: PostModel }>()
+);
+export const deletePostsFailed = createAction(
+  DELETE_POST_FAILED,
+  props<{ any }>()
+);

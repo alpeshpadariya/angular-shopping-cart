@@ -39,9 +39,8 @@
                   class="form-control"
                   id="sel1"
                 >
-                  <option>Tshirt</option>
-                  <option>Jeans</option>
-                  <option>Pants</option>
+                  <option>men clothing</option>
+                  <option>jewelery</option>
                 </select>
               </div>
             </div>
@@ -77,6 +76,7 @@
         <th>Name</th>
         <th style="width: 400px">Price</th>
         <th>Category</th>
+        <th>Price</th>
         <th>Image</th>
         <th>Status</th>
       </tr>
@@ -89,6 +89,7 @@
         <td>
           {{ task.title }}
         </td>
+        <td>{{ task.category }}</td>
         <td>{{ task.price }} $</td>
         <td><img src="{{ task.image }}" height="100" width="100" /></td>
         <td>
@@ -161,9 +162,8 @@
         <div class="form-group col-md-6">
           <label for="sel1">Status:</label>
           <select formControlName="category" class="form-control" id="sel1">
-            <option>Tshirt</option>
-            <option>Jeans</option>
-            <option>Pants</option>
+            <option>men clothing</option>
+            <option>jewelery</option>
           </select>
         </div>
       </div>

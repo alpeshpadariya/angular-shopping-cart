@@ -51,7 +51,6 @@ export class PostComponent implements OnInit {
     };
     this.store.dispatch(postAction.createTask({ post }));
     this.todoForm.reset();
-    alert('added');
   }
 
   openModal(ref: TemplateRef<any>, product) {

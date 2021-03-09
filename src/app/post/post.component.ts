@@ -21,7 +21,6 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(postAction.getPosts());
     this.store.select(getPostsSelector).subscribe((response) => {
-      console.log('asdf', response);
       this.tasks = response;
     });
   }
